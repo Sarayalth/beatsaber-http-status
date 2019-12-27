@@ -335,12 +335,6 @@ namespace BeatSaberHTTPStatus {
 			gameStatus.initialScore = score;
 			gameStatus.finalScore = -1;
 			gameStatus.cutMultiplier = multiplier;
-		}
-
-		public void OnNoteWasCut2(NoteController noteController, NoteCutInfo noteCutInfo) {
-			var gameStatus = statusManager.gameStatus;
-
-			var noteData = noteController.noteData;
 
 			if (noteData.noteType == NoteType.Bomb) {
 				gameStatus.passedBombs++;
@@ -360,6 +354,12 @@ namespace BeatSaberHTTPStatus {
 					statusManager.EmitStatusUpdate(ChangedProperties.PerformanceAndNoteCut, "noteMissed");
 				}
 			}
+		}
+
+		public void OnNoteWasCut2(NoteController noteController, NoteCutInfo noteCutInfo) {
+			var gameStatus = statusManager.gameStatus;
+
+			var noteData = noteController.noteData;
 
 			List<CutScoreBuffer> list = (List<CutScoreBuffer>)afterCutScoreBuffersField.GetValue(scoreController);
 
