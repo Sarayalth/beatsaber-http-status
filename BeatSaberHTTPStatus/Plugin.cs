@@ -170,7 +170,7 @@ namespace BeatSaberHTTPStatus {
 				gamePause.didResumeEvent += OnGameResume;
 				// public ScoreController#noteWasCutEvent<NoteData, NoteCutInfo, int multiplier> // called after AfterCutScoreBuffer is created
 				scoreController.noteWasCutEvent += OnNoteWasCut;
-				// public NoteController#noteWasCutEvent<NoteController, NoteCutInfo, int multiplier>
+				// public NoteController#noteWasCutEvent<NoteController, NoteCutInfo>
 				noteController.noteWasCutEvent += OnNoteWasCut2;
 				// public ScoreController#noteWasMissedEvent<NoteData, int multiplier>
 				scoreController.noteWasMissedEvent += OnNoteWasMissed;
